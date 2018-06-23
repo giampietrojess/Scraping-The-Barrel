@@ -7,11 +7,15 @@ body{
     min-height: 100vh;
     flex-direction: column;
   }
-  
+
   main{
     flex: 1 0 auto;
   }
-  
+  .page-footer {
+    bottom: 0px!important;
+  }
+
+
   .articleBody{
     height: 200px;
     font-size: 20px;
