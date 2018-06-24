@@ -16,19 +16,8 @@ router.get('/', function(req, res) {
     res.redirect('/articles');
 });
 
-// router.get('/test-scrape', function(req, res) {
-//   request(result.link, function(error, response, html) {
-//     var $ = cheerio.load(html);
 
-//     $('.l-col__main').each(function(i, element){
-//       var result = {};
-
-//       console.log($(this).children('.c-entry-content').children('p').text());
-//     });
-//   });
-// });
-
-// A GET request to scrape the Verge website
+// A GET request to scrape the AV Club website
 router.get('/scrape', function(req, res) {
     // First, we grab the body of the html with request
     request('https://aux.avclub.com/', function(error, response, html) {
@@ -40,7 +29,7 @@ router.get('/scrape', function(req, res) {
             // Save an empty result object
             var result = {};
 
-            // Add the text and href of every link, and save them as properties of the result object
+            // Add the text and href of every link, as well as the author attributed to the article, save them as properties of the result object
             result.title = $(this).children('a').text();
             result.link = $(this).children('a').attr('href');
             result.author = $(this).next().children('.author').text();
@@ -183,7 +172,7 @@ router.post('/comment/:id', function(req, res) {
       } else {
           console.log(doc._id)
           console.log(articleId)
-          Article.findOneAndUpdate({ "_id": req.params.id }, {$push: {'comment':doc._id}}, {new: true})
+          Article.findOneAndUpdate({ "_id": articleId }, {$push: {'comment':doc._id}}, {new: true})
             //execute everything
             .exec(function(err, doc) {
                 if (err) {
@@ -195,5 +184,26 @@ router.post('/comment/:id', function(req, res) {
         }
   });
 });
+
+// Delete a Comment Route
+router.post('readArticle/remove/comment/:id', function (req, res){
+
+    // Collect comment id
+    var commentId = req.params.id;
+  
+    // Find and Delete the Comment using the Id
+    Comment.findByIdAndRemove(commentId, function (err, Comment) {  
+      
+      if (err) {
+        console.log(err);
+      } 
+      else {
+        // Send Success Header
+        res.json({ message: 'Deleted'});
+      }
+  
+    });
+  
+  });
 
 module.exports = router;
