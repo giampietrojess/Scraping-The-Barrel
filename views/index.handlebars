@@ -1,0 +1,21 @@
+<div>
+    <h1 class="card z-depth-3 center-align heading">Extra! Extra!</h1>
+    <div class="row">
+      <div class="col s12"></div>
+      <h5 class="center-align">Click the Scraper to Scrape some Reading Related Reports!</h5>
+    </div>
+</div>
+
+<div class="row">
+  
+  <div class ="col s12 left-align box">
+    {{#each article}}
+      <div class="card-panel">
+        <h4>{{this.title}}</h4>
+        <p>By: {{this.author}}</p>
+        {{!-- goes to article.handlebars --}}
+        <a href = "/readArticle/{{this._id}}" class="waves-effect waves-light btn red darken-4" id="btnSignUp">Read Quick Article</a>
+      </div>
+    {{/each}}
+  </div>
+</div>
