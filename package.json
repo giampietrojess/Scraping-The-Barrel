@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/giampietrojess/Scraping-The-Barrel#readme",
   "dependencies": {
+    "animate.css": "^3.6.1",
     "body-parser": "^1.15.2",
     "cheerio": "^0.22.0",
     "express": "^4.14.0",
