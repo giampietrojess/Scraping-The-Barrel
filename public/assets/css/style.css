@@ -1,0 +1,68 @@
+body{
+    background: url('../img/motivo3-01.jpg') repeat;
+    background-size: 600px;
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 16px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+  
+main{
+    flex: 1 0 auto;
+}
+
+.article{
+    height: 100px;
+    width: 300px;
+    overflow: scroll;
+}
+
+h5.articleBody {
+    padding: 20px!important;
+    font-size: 16px;
+    text-indent: 50px;
+    line-height: 1.6;
+    overflow: scroll;
+    height: 300px;
+    box-shadow: none!important;
+}
+
+  h5.articleBody::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+#nameComment{
+    font-weight: bold;
+    background: #000;
+    color: white;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+#commentBody {
+    height: 150px;
+    margin-left: 20px;
+}
+
+.titlize {
+    box-shadow: none!important;
+    border-bottom: 20px black solid;
+    padding: 20px!important;
+}
+
+.heading {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 120px;
+    box-shadow: none!important;
+}
+
+
+.box {
+    padding: 20px!important;
+}
+
+.commenty {
+    border-top: 20px black solid;
+}
