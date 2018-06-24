@@ -4,6 +4,7 @@
 <div class="row"> 
 
   <h5 class="card-panel articleBody col s12">{{body}}</h5>
+  <i>Please read the full article <a href="{{link}}" target="_new">here</a>.</i>
 
 </div>
 
@@ -30,11 +31,12 @@
       <div class="row">
         <div class="col s12">
         <div class="input-field">
-        <center><input class="btn add-comment-button red darken-4" type="submit" value="Submit"></center>
+          <center><input class="btn add-comment-button red darken-4" type="submit" data-id="{{article._id}}" value="Submit"></center>
         </div>
         </div>
       </div>
     </form>
+
 </div>
 
 {{!-- comments go here --}}
@@ -46,6 +48,12 @@
             <div class="card">
               <p id="nameComment">{{name}}</p>
               <p id="commentBody">{{body}}<p>
+                 {{!-- Add a Delete Button --}}
+                
+                  <form id="form-delete-{{_id}}" action="remove/comment/{{_id}}" method="post">
+                    <input class="btn delete-comment-button red darken-4" type="submit" data-id="{{_id}}" value="Delete">
+                  </form>
+                
             </div>
           {{/each}}
           {{else}}
