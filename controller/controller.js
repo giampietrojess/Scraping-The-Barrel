@@ -186,7 +186,7 @@ router.post('/comment/:id', function(req, res) {
 });
 
 // Delete a Comment Route
-router.post('readArticle/remove/comment/:id', function (req, res){
+router.post('/remove/comment/:id', function (req, res){
 
     // Collect comment id
     var commentId = req.params.id;
