@@ -7,7 +7,9 @@ https://sheltered-bayou-83404.herokuapp.com/articles
 
 ## Screen Shots
 
-
+![Screen shot](public/assets/images/Screenshot1.png)
+![Screen shot](public/assets/images/Screenshot2.png)
+![Screen shot](public/assets/images/Screenshot3.png)
 
 ## Technologies used
 - Node.js
